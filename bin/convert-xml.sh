@@ -19,14 +19,14 @@ test -f $sqliteDb || {
 
 for sample in "$@"
 do
-    xml=$sample-blastx-RVDB.xml
+    xml=$sample-blastx.xml
 
     test -f $xml || {
         echo "BLAST XML file '$xml' does not exist." >&2
         exit 1
     }
 
-    contigs=$sample-contigs.fasta
+    contigs=$sample.fasta
 
     test -f $contigs || {
         echo "FASTA contigs file '$contigs' does not exist." >&2
