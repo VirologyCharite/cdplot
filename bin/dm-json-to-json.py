@@ -211,6 +211,16 @@ if __name__ == '__main__':
         help='sequence titles that should be blacklisted')
 
     parser.add_argument(
+        '--whitelistFile',
+        help=('The name of a file that contains sequence titles (ids) that '
+              'should be whitelisted, one per line'))
+
+    parser.add_argument(
+        '--blacklistFile',
+        help=('The name of a file that contains sequence titles (ids) that '
+              'should be blacklisted, one per line'))
+
+    parser.add_argument(
         '--titleRegex', default=None,
         help='a regex that sequence titles must match.')
 
@@ -363,6 +373,7 @@ if __name__ == '__main__':
         maxHspsPerHit=args.maxHspsPerHit,
         scoreCutoff=args.scoreCutoff,
         whitelist=whitelist, blacklist=blacklist,
+        whitelistFile=args.whitelistFile, blacklistFile=args.blacklistFile,
         titleRegex=args.titleRegex, negativeTitleRegex=args.negativeTitleRegex,
         truncateTitlesAfter=args.truncateTitlesAfter, taxonomy=args.taxonomy)
 
